@@ -1,0 +1,56 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+
+repositories {
+
+    jcenter()
+}
+
+
+war {
+    rootSpec.exclude("**/sun-jaxws.xml")
+    rootSpec.exclude("**/web.xml")
+}
+
+
+
+dependencies {
+    
+    compile 'commons-beanutils:commons-beanutils:20030211.134440'
+    providedCompile 'javax.xml.ws:jaxws-api:2.2.11'
+    testCompile 'junit:junit:3.8.2'
+    compile group: 'com.sun.xml.ws', name: 'jaxws-rt', version: '2.1.3'
+    compile fileTree(include: ['*.jar'], dir: 'lib')
+}
+
+
+war
+        {
+            from configurations.compile.collect { zipTree it }
+            manifest.attributes("Main-Class": "java.de.uniba.search.services.TicketManagementSearch")
+        }
+
+
+
+task undeploy(type: Exec) {
+    // ignore if not deployed yet
+    ignoreExitValue true
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'asadmin.bat', 'undeploy', 'search'
+    } else {
+        commandLine 'asadmin', 'undeploy', 'search'
+    }
+}
+
+
+
+task deploy(type: Exec) {
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'asadmin.bat', 'deploy', '--contextroot', '/', 'build/libs/search.war'
+    } else {
+        commandLine 'asadmin', 'deploy', '--contextroot', '/', 'build/libs/search.war'
+    }
+}

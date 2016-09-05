@@ -1,0 +1,58 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+
+repositories {
+    jcenter()
+}
+
+
+war {
+    rootSpec.exclude("**/sun-jaxws.xml")
+    rootSpec.exclude("**/web.xml")
+}
+
+
+dependencies {
+
+    compile 'org.slf4j:slf4j-api:1.7.12'
+    compile 'commons-beanutils:commons-beanutils:20030211.134440'
+    providedCompile 'javax.xml.ws:jaxws-api:2.2.11'
+    compile fileTree(dir: 'lib', include: '**/*.jar')
+    testCompile 'junit:junit:4.12'
+    compile group: 'com.sun.xml.ws', name: 'jaxws-rt', version: '2.1.3'
+}
+
+
+
+war
+        {
+            from configurations.compile.collect { zipTree it }
+            manifest.attributes("Main-Class": "java.de.uniba.server.services.TicketManagementServer")
+        }
+
+
+
+
+task undeploy(type: Exec) {
+    // ignore if not deployed yet
+    ignoreExitValue true
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'asadmin.bat', 'undeploy', 'server'
+    } else {
+        commandLine 'asadmin', 'undeploy', 'server'
+    }
+}
+
+
+
+
+task deploy(type: Exec) {
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'asadmin.bat', 'deploy', '--contextroot', '/', 'build/libs/server.war'
+    } else {
+        commandLine 'asadmin', 'deploy', '--contextroot', '/', 'build/libs/server.war'
+    }
+}

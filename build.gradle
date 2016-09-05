@@ -1,0 +1,99 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+
+    repositories {
+        jcenter()
+    }
+
+}
+
+def webProjects() {
+    subprojects.findAll { subproject -> subproject.plugins.hasPlugin('war') }
+}
+
+/**
+ * start the server
+ */
+task startGlassfish(type: Exec) {
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'asadmin.bat', 'start-domain'
+    } else {
+        commandLine 'asadmin', 'start-domain'
+    }
+}
+
+/**
+ * stop the server
+ */
+task stopGlassfish(type: Exec) {
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'asadmin.bat', 'stop-domain'
+    } else {
+        commandLine 'asadmin', 'stop-domain'
+    }
+}
+
+task deployServer(type: Exec) {
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'asadmin.bat', 'deploy', '--contextroot', '/m', 'server/build/libs/server.war'
+    } else {
+        commandLine 'asadmin', 'deploy', '--contextroot', '/m', 'server/build/libs/server.war'
+    }
+}
+
+task undeployServer(type: Exec) {
+    // ignore if not deployed yet
+    ignoreExitValue true
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'asadmin.bat', 'undeploy', 'server'
+    } else {
+        commandLine 'asadmin', 'undeploy', 'server'
+    }
+}
+
+task deploySearch(type: Exec) {
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'asadmin.bat', 'deploy', '--contextroot', '/c', 'search/build/libs/search.war'
+    } else {
+        commandLine 'asadmin', 'deploy', '--contextroot', '/c', 'search/build/libs/search.war'
+    }
+}
+
+task undeploySearch(type: Exec) {
+    // ignore if not deployed yet
+    ignoreExitValue true
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commandLine 'cmd', '/c', 'asadmin.bat', 'undeploy', 'search'
+    } else {
+        commandLine 'asadmin', 'undeploy', 'search'
+    }
+}
+
+/**
+ * deploy the web services
+ */
+task deployAll {
+    dependsOn 'deployServer'
+    dependsOn 'deploySearch'
+}
+
+/**
+ * undeploy the web services
+ */
+task undeployAll {
+    dependsOn 'undeployServer'
+    dependsOn 'undeploySearch'
+}
+

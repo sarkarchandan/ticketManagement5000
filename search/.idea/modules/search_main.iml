@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="search:main" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="Web Gradle : search.war">
+      <configuration>
+        <webroots>
+          <root url="file://$MODULE_DIR$/../../src/main/webapp" relative="/" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/slf4j-api-1.7.13.jar_ctup9ekabirw89g33v9x2z50q/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/slf4j-api-1.7.13.jar_ctup9ekabirw89g33v9x2z50q/org" relative="/org" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/commons-beanutils-20030211.134440.jar_7y0mqp7jl204gx3r2au9g4znc/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/commons-beanutils-20030211.134440.jar_7y0mqp7jl204gx3r2au9g4znc/org" relative="/org" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/jaxws-rt-2.1.3.jar_62t72ozfkb19hn56kdib0oee7/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/jaxws-rt-2.1.3.jar_62t72ozfkb19hn56kdib0oee7/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/jaxws-api-2.2.11.jar_6wc0ylqdrc9015sqfe923uv0n/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/jaxws-api-2.2.11.jar_6wc0ylqdrc9015sqfe923uv0n/javax" relative="/javax" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/jaxb-impl-2.1.6.jar_10ezc69ahdr9loydcawwh8ybz/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/jaxb-impl-2.1.6.jar_10ezc69ahdr9loydcawwh8ybz/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/saaj-impl-1.3.jar_2337ky8xdjvva6x7x93esmx9t/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/saaj-impl-1.3.jar_2337ky8xdjvva6x7x93esmx9t/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/streambuffer-0.7.jar_e217q1ec54rtg2k6peirkr43q/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/streambuffer-0.7.jar_e217q1ec54rtg2k6peirkr43q/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/sjsxp-1.0.jar_e1ryhb8gnrcxlyuq1731gn3w5/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/sjsxp-1.0.jar_e1ryhb8gnrcxlyuq1731gn3w5/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/stax-ex-1.2.jar_sgeqdw6ol9280j37iwu096x1/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/stax-ex-1.2.jar_sgeqdw6ol9280j37iwu096x1/org" relative="/org" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/resolver-20050927.jar_5noix2k46n55gkwd0c6ng3w59/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/resolver-20050927.jar_5noix2k46n55gkwd0c6ng3w59/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/mimepull-1.1.jar_dhcmkidc0w5hzifzxwtmxk5i2/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/mimepull-1.1.jar_dhcmkidc0w5hzifzxwtmxk5i2/org" relative="/org" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/saaj-api-1.3.jar_eai2hr3704c2mynb9zajhbtlq/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/saaj-api-1.3.jar_eai2hr3704c2mynb9zajhbtlq/javax" relative="/javax" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.jar_ezmfxr182ns1kpyadw9acoje5/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.jar_ezmfxr182ns1kpyadw9acoje5/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.jar_ezmfxr182ns1kpyadw9acoje5/javax" relative="/javax" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/junit-3.8.jar_5szfxr1m85g3gb15fd2zg58p1/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/junit-3.8.jar_5szfxr1m85g3gb15fd2zg58p1/junit" relative="/junit" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/junit-3.8.jar_5szfxr1m85g3gb15fd2zg58p1/junit3.8" relative="/junit3.8" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/junit-3.8.jar_5szfxr1m85g3gb15fd2zg58p1" relative="" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.xml.soap-api-1.3.5.jar_3lzem3pbrepymcxpzp6guzzv1/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.xml.soap-api-1.3.5.jar_3lzem3pbrepymcxpzp6guzzv1/javax" relative="/javax" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.annotation-api-1.2-b03.jar_4cgtw0jkhmkulxarc2859cakd/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.annotation-api-1.2-b03.jar_4cgtw0jkhmkulxarc2859cakd/javax" relative="/javax" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/jsr181-api-1.0-MR1.jar_axsf8z1hai86xibbbsgdti8le/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/jsr181-api-1.0-MR1.jar_axsf8z1hai86xibbbsgdti8le/javax" relative="/javax" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/stax-api-1.0-2.jar_524lfktusk52ybir77co51oxi/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/stax-api-1.0-2.jar_524lfktusk52ybir77co51oxi/javax" relative="/javax" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/jaxb-api-2.2.9.jar_cesldy30x99x884idnd2zc8ad/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/jaxb-api-2.2.9.jar_cesldy30x99x884idnd2zc8ad/javax" relative="/javax" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/../../src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/../../src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../../build/classes/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.13" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.jws:jsr181-api:1.0-MR1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.xml.bind:jaxb-api:2.2.9" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.xml.soap:javax.xml.soap-api:1.3.5" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.annotation:javax.annotation-api:1.2-b03" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.xml.ws:jaxws-api:2.2.11" level="project" />
+    <orderEntry type="library" name="Gradle: commons-beanutils:commons-beanutils:20030211.134440" level="project" />
+    <orderEntry type="library" name="Gradle: com.sun.xml.ws:jaxws-rt:2.1.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.sun.xml.bind:jaxb-impl:2.1.6" level="project" />
+    <orderEntry type="library" name="Gradle: com.sun.xml.messaging.saaj:saaj-impl:1.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.sun.xml.stream.buffer:streambuffer:0.7" level="project" />
+    <orderEntry type="library" name="Gradle: com.sun.xml.stream:sjsxp:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jvnet.staxex:stax-ex:1.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.sun.org.apache.xml.internal:resolver:20050927" level="project" />
+    <orderEntry type="library" name="Gradle: org.jvnet:mimepull:1.1" level="project" />
+    <orderEntry type="library" name="Gradle: javax.xml.soap:saaj-api:1.3" level="project" />
+    <orderEntry type="library" name="Gradle: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:3.8" level="project" />
+    <orderEntry type="library" name="Gradle: javax.xml.stream:stax-api:1.0-2" level="project" />
+  </component>
+</module>

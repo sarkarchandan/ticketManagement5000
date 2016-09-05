@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="TicketManagementSystem5000-entities">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/TicketManagementSystem5000-entities.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/TicketManagementSystem5000-entities.jar!/" />
+    </SOURCES>
+  </library>
+</component>
