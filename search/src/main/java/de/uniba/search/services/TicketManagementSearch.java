@@ -18,11 +18,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Created by chandan
- * On 7/4/16.
+ * Provides customized search functionality for all Tickets
+ * Created by chandan On 7/4/16.
  */
 
-/**
+/*
  * Service Endpoint
  */
 
@@ -30,13 +30,13 @@ import java.util.logging.Logger;
 public class TicketManagementSearch implements TicketManagementServer{
 
 
-    /**
-     * Declaring logger object to enable logging.
+    /*
+     * Enable logging at the class level
      */
     private static Logger newLogger = Logger.getLogger(TicketManagementSearch.class.getName());
 
 
-    /**
+    /*
      * Setting up the WSDL Location for server service.
      */
     private String wsdlLocation = "http://ubuntu:8080/m/TicketManagementServerService?wsdl";

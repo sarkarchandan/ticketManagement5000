@@ -18,31 +18,31 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Created by chandan
- * On 6/29/16.
+ * Provides core Ticket Management related fnctionalities
+ * @author Created by chandan On 6/29/16.
  */
 
-/**
+/*
  * Service Endpoint
  */
 
 @WebService
 public class TicketManagementServer extends AbstractConnector implements Runnable {
 
-	/**
-	 * Declaring Logger object to enable logging.
+	/*
+	 * Enable logging at the class level
 	 */
 	private static Logger newLogger = Logger.getLogger(TicketManagementServer.class.getName());
 
-	/**
+	/*
 	 * primaryTicketList has been declared as static as we want this List of
 	 * Ticket to be a shared resource among all class methods. This List will be
 	 * used for all Ticket related operations.
 	 */
 	private static List<Ticket> primaryTicketList = new ArrayList<Ticket>();
 
-	/**
-	 * Constructor
+	/*
+	 * Constructor for TicketManagementServer
 	 */
 	public TicketManagementServer() {
 	}
@@ -51,9 +51,7 @@ public class TicketManagementServer extends AbstractConnector implements Runnabl
 	 * Method createTicket connects Ticket Management Systems using an instance
 	 * of GlobalAppController and creates a new Ticket. Newly created Ticket
 	 * will be added to the shared Ticket List.
-	 * 
-	 * @param ticketContent
-	 *            String
+	 * @param ticketContent {String}
 	 */
 	@WebMethod
 	public synchronized String createTicket(@WebParam(name = "ticketContent") String ticketContent) {
@@ -68,6 +66,10 @@ public class TicketManagementServer extends AbstractConnector implements Runnabl
 				newLogger.info(
 						"Class TicketManagementServer/ Method createTicket: Establishing Connection with the Ticket Management Server");
 
+				/*
+				 * Creating an instance of Global Application Controller.
+				 * Global App Controller class has been provided with library files of the Ticket Management System
+				 */
 				GlobalAppController gac = GlobalAppController.getInstance();
 				gac.addConnector(this);
 				TicketManagement ticketManagementObject = this.getTicketManagement();
@@ -75,6 +77,9 @@ public class TicketManagementServer extends AbstractConnector implements Runnabl
 
 				newLogger
 						.info("Class TicketManagementServer/ Method createTicket: Converting String Content to Ticket object");
+				/*
+				 * Client will be designed to send the ticket as a string where each respective field of the ticket is delimited by | character
+				 */
 				String[] eachTicketPart = ticketContent.split("\\|");
 				eachTicketPart[5] = "NEW";
 				Ticket newTicket = new Ticket(1, eachTicketPart[0], eachTicketPart[1], eachTicketPart[2],
@@ -83,6 +88,9 @@ public class TicketManagementServer extends AbstractConnector implements Runnabl
 
 				newLogger.info("Class TicketManagementServer/ Method createTicket: Logging a new ticket");
 
+				/*
+				 * Ticket Management object creates a new Ticket and adds the same to the List of Tickets.
+				 */
 				ticket = ticketManagementObject.createNewTicket(newTicket);
 				primaryTicketList.add(ticket);
 
@@ -104,9 +112,7 @@ public class TicketManagementServer extends AbstractConnector implements Runnabl
 	/**
 	 * Method getAllRegisteredTicket returns all registered Tickets as a list of
 	 * Tickets.
-	 * 
 	 * @return List<Ticket>
-	 *
 	 */
 	@WebMethod
 	public synchronized List<Ticket> getAllRegisteredTicket() {
@@ -129,8 +135,7 @@ public class TicketManagementServer extends AbstractConnector implements Runnabl
 	 * Method acceptNewTicket validates the ticket id against registered tickets
 	 * and upon checking the validity accepts the ticket.
 	 * Only a NEW ticket can be ACCEPTED.
-	 * 
-	 * @param ticketID
+	 * @param ticketID {int}
 	 * @throws TicketNotFoundException
 	 */
 	@WebMethod
@@ -281,10 +286,6 @@ public class TicketManagementServer extends AbstractConnector implements Runnabl
 		return warningMessage;
 	}
 
-	/**
-	 * TODO: Explore why the normal thread implementation is not working. Since
-	 * Ticket Management functionality should be thread safe.
-	 */
 	@Override
 	// @WebMethod(exclude=true)
 	public void run() {
